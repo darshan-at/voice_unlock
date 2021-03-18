@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "774219860221",
+    "project_id": "college-61a3f",
+    "storage_bucket": "college-61a3f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:774219860221:android:84b84a65f391b19e9dd694",
+        "android_client_info": {
+          "package_name": "com.example.flutter_application_1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "774219860221-8l5d2oi7ah8s2los0dhfrg98a5gmimt6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyANSQnfOQ_7yHlv91vqQ5ypcjwV1-F7PGA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "774219860221-8l5d2oi7ah8s2los0dhfrg98a5gmimt6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
