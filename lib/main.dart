@@ -1,11 +1,13 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Screens/Calculator/calculator_screen.dart';
 import 'package:flutter_application_1/Screens/HomePage.dart';
 import 'package:flutter_application_1/Screens/Signup/signup_screen.dart';
 import 'package:flutter_application_1/Screens/Welcome/welcome_screen.dart';
 import 'package:flutter_application_1/constants.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
 
 String email="";
 void main() async {
@@ -33,6 +35,7 @@ class MyApp extends StatelessWidget {
         "homescreen":(context)=>HomePage(),
         "welcomescreen":(context)=>WelcomeScreen(),
         "signupscreen":(context)=>SignUpScreen(),
+        "calculatorscreen":(context)=>CalculatorScreen(),
       },
     );
   }

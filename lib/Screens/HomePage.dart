@@ -1,8 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'dart:convert';
-import 'package:flutter/services.dart';
+
 import 'package:http/http.dart' as http;
 import 'dart:io';
 import 'round_icon_button.dart';
@@ -11,6 +10,7 @@ import 'package:async/async.dart';
 import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:flutter_application_1/Services/authentication_services.dart';
+import 'package:flutter_application_1/Screens/Calculator/calculator_screen.dart';
 import 'constants.dart';
 import 'package:flutter_audio_recorder/flutter_audio_recorder.dart';
 
@@ -22,7 +22,7 @@ enum AppState {
   IsPlaying,
   IsPredicting
 }
-const RECORDING_DURATION = Duration(seconds: 5);
+const RECORDING_DURATION = Duration(seconds: 8);
 
 class HomePage extends StatefulWidget {
   @override
@@ -121,6 +121,13 @@ class _HomePageState extends State<HomePage> {
     await _startRecording();
     await Future.delayed(RECORDING_DURATION);
     await _stopRecording();
+
+    String dirPath =(await getExternalStorageDirectory()).path;
+    String filename = 'tempFile.wav';
+    String filePath = "$dirPath/$filename";
+    File file = File(filePath);
+    uploadImageToServer(file);
+    print(file);
     print("Done");
   }
 
@@ -206,15 +213,8 @@ class _HomePageState extends State<HomePage> {
                   padding: EdgeInsets.all(60),
                   child: RoundIconButton(
                     icon: FontAwesomeIcons.play,
-                    onCurrentPressed: () async {
-                      String dirPath =
-                          (await getExternalStorageDirectory()).path;
-
-                      String filename = 'tempFile.wav';
-                      String filePath = "$dirPath/$filename";
-                      File file = File(filePath);
-                      uploadImageToServer(file);
-                      print(file);
+                    onCurrentPressed: () {
+                      Navigator.pushReplacementNamed(context, "calculatorscreen");
                     },
                   ),
                 ),
